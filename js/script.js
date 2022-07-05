@@ -13,8 +13,8 @@ focusOnNameInputOnLoad();
 /////////////////////////////////////////////////////////////////
 
 function hideOtherJobRole() {
-  let jobRoleSelect = document.querySelector("#title");
-  let otherJobRoleInput = document.querySelector("#other-job-role");
+  const jobRoleSelect = document.querySelector("#title");
+  const otherJobRoleInput = document.querySelector("#other-job-role");
   otherJobRoleInput.style.display = "none";
 
   jobRoleSelect.addEventListener("change", (e) => {
@@ -26,3 +26,15 @@ function hideOtherJobRole() {
   });
 }
 hideOtherJobRole();
+
+/////////////////////////////////////////////////////////////////
+/////////////// HIDING THE OTHER JOB ROLE FIELD /////////////////
+/////////////////////////////////////////////////////////////////
+function tshirtOptionsSelection() {
+  const designSelect = document.querySelector("#design");
+
+  const colorSelect = document.querySelector("#color");
+
+  designSelect.addEventListener("change", (e) => {});
+}
+tshirtOptionsSelection();
