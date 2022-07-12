@@ -9,10 +9,7 @@ const colorOption = colorSelect.children;
 /////////////// FOCUS ON NAME INPUT ON PAGE LOAD ////////////////
 /////////////////////////////////////////////////////////////////
 
-function focusOnNameInputOnLoad() {
-  nameFocus.focus();
-}
-focusOnNameInputOnLoad();
+nameFocus.focus();
 
 /////////////////////////////////////////////////////////////////
 /////////////// HIDING THE OTHER JOB ROLE FIELD /////////////////
@@ -23,7 +20,7 @@ function hideOtherJobRole() {
 
   jobRoleSelect.addEventListener("change", (e) => {
     if (e.target.value === "other") {
-      otherJobRoleInput.style.display = "inline-block";
+      otherJobRoleInput.style.display = "initial";
     } else {
       otherJobRoleInput.style.display = "none";
     }
@@ -36,20 +33,21 @@ hideOtherJobRole();
 /////////////////////////////////////////////////////////////////
 
 // T-Shirt Select Options
-function tshirtOptionsSelection() {
+function tshirtColorSelections() {
   colorSelect.disabled = true;
   designSelect.addEventListener("change", (e) => {
-    if (designSelect.value == "js puns") {
-      colorSelect.disabled = false;
-      colorOption[4].disabled = true;
-      colorOption[5].disabled = true;
-      colorOption[6].disabled = true;
-    } else {
-      colorSelect.disabled = false;
-      colorOption[1].disabled = true;
-      colorOption[2].disabled = true;
-      colorOption[3].disabled = true;
+    colorSelect.disabled = false;
+    for (let i = 0; i < colorOption.length; i++) {
+      let selection = e.target.value;
+      let theme = colorOption[i].getAttribute("data-theme");
+      if (selection === theme) {
+        colorOption[i].hidden = false;
+        colorOption[i].selected = true;
+      } else {
+        colorOption[i].hidden = true;
+        colorOption[i].selected = false;
+      }
     }
   });
 }
-tshirtOptionsSelection();
+tshirtColorSelections();

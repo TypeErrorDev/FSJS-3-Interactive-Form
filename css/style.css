@@ -489,6 +489,10 @@ button:hover {
   background: rgba(197, 163, 175, 0.1) !important;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ================================= 
   Media queries styles
 ==================================== */
