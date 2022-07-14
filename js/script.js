@@ -13,7 +13,7 @@ const colorOption = colorSelect.children;
 // Activities
 const activitiesBox = document.getElementById("activities");
 const activitiesCheckbox = document.querySelectorAll('[type="checkbox"]');
-const activitiesCost = document.getElementById("activities-cost");
+const totalCost = document.getElementById("activities-cost");
 
 /* ==================================
     FOCUS ON NAME INPUT ON PAGE LOAD
@@ -64,16 +64,30 @@ tshirtColorSelections();
     ACTIVITIES TOTAL COST UPDATE
 ===================================== */
 
-function compareDatesAndTimes() {}
+// declare variables of the event data-day-and-time attribute
 
-function addCosts() {}
+function compareDatesAndTimes() {
+  // loop through each input in the fieldset by "data-day-and-time" attribute
+  // if one event's date and time is the same as another selection, dont allow the selection
+  // if its not the same.......allow the selection?? need to figure out this wording better Matt, come on dude
+}
+
+function addCosts() {
+  // loop through each checkbox class="activity-cost"
+  // if activityCheckbox.is(":checked")
+  // innerText += act
+}
 
 activitiesBox.addEventListener("change", (e) => {
-  const total = activitiesCost;
+  const total = totalCost;
   let price = 0;
   const selectedEvents = e.target;
   activitiesCheckbox.forEach((field) => {
     let label = field.parentElement;
     console.log(label);
   });
+
+  // on change, run the compareDatesAndTimes function
+  // run addCosts function and update price variable
+  // should be it? just need to figure out the first two functions :(
 });
