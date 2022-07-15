@@ -11,7 +11,7 @@ const designSelect = document.querySelector("#design");
 const colorSelect = document.querySelector("#color");
 const colorOption = colorSelect.children;
 // Activities
-const activitiesBox = document.getElementById("activities");
+const activitiesBox = document.getElementById("activities-box");
 const activitiesCheckbox = document.querySelectorAll('[type="checkbox"]');
 const totalCost = document.getElementById("activities-cost");
 
@@ -65,6 +65,11 @@ tshirtColorSelections();
 ===================================== */
 
 // declare variables of the event data-day-and-time attribute
+const dateInputs = document.querySelector(`[type="checkbox"]`);
+// const dateAndTime = dateInputs.getAttribute("data-date-and-time");
+
+// declare variables of the event data-cost attribute
+const cbDataCosts = dateInputs.getAttribute("data-cost");
 
 function compareDatesAndTimes() {
   // loop through each input in the fieldset by "data-day-and-time" attribute
@@ -75,7 +80,7 @@ function compareDatesAndTimes() {
 function addCosts() {
   // loop through each checkbox class="activity-cost"
   // if activityCheckbox.is(":checked")
-  // innerText += act
+  // totalCost += innerText
 }
 
 activitiesBox.addEventListener("change", (e) => {
