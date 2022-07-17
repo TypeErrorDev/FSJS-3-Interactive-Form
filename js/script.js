@@ -11,9 +11,11 @@ const designSelect = document.querySelector("#design");
 const colorSelect = document.querySelector("#color");
 const colorOption = colorSelect.children;
 // Activities
-const activitiesBox = document.getElementById("activities-box");
-const activitiesCheckbox = document.querySelectorAll('[type="checkbox"]');
-const totalCost = document.getElementById("activities-cost");
+const activities = document.querySelector("#activities");
+const checkboxes = document.querySelectorAll(
+  "#activities input[type=checkbox]"
+);
+let totalCost = document.getElementById("activities-cost");
 
 /* ==================================
     FOCUS ON NAME INPUT ON PAGE LOAD
@@ -71,28 +73,30 @@ const dateInputs = document.querySelector(`[type="checkbox"]`);
 // declare variables of the event data-cost attribute
 const cbDataCosts = dateInputs.getAttribute("data-cost");
 
-function compareDatesAndTimes() {
-  // loop through each input in the fieldset by "data-day-and-time" attribute
-  // if one event's date and time is the same as another selection, dont allow the selection
-  // if its not the same.......allow the selection?? need to figure out this wording better Matt, come on dude
-}
+activities.addEventListener("change", (e) => {
+  let activity = e.target;
+  let activity_cost = +activity.dataset.cost;
+  let activity_date = activity.dataset.dayAndTime;
 
-function addCosts() {
-  // loop through each checkbox class="activity-cost"
-  // if activityCheckbox.is(":checked")
-  // totalCost += innerText
-}
+  for (let i = 0; i < checkboxes.length; i++) {
+    let checkbox = checkboxes[i];
+    let checkboxDate = checkbox.dataset.dayAndTime;
+    let label = checkbox.parentElement;
 
-activitiesBox.addEventListener("change", (e) => {
-  const total = totalCost;
-  let price = 0;
-  const selectedEvents = e.target;
-  activitiesCheckbox.forEach((field) => {
-    let label = field.parentElement;
-    console.log(label);
-  });
+    if (checkboxDate === activity_date && checkbox !== activity) {
+      if (activity.checked) {
+        checkbox.disabled = true;
+        label.setAttribute("class", "disabled");
+      } else {
+        checkbox.disabled = false;
+        label.removeAttribute("class", "disabled");
+      }
+    }
+  }
+  activity.checked
+    ? (totalCost += activity_cost)
+    : (totalCost -= activity_cost);
 
-  // on change, run the compareDatesAndTimes function
-  // run addCosts function and update price variable
-  // should be it? just need to figure out the first two functions :(
+  totalCost.textContent = `Total: $${totalCost}`;
+  console.log(`Total: $${totalCost}`);
 });
