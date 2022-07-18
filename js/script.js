@@ -98,6 +98,5 @@ activities.addEventListener("change", (e) => {
     ? (totalCost += activity_cost)
     : (totalCost -= activity_cost);
 
-  // totalCost.textContent = `Total: $${+totalCost}`;
-  console.log(totalCost);
+  totalCost.textContent(`Total: $${totalCost}`);
 });
