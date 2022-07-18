@@ -15,7 +15,7 @@ const activities = document.querySelector("#activities");
 const checkboxes = document.querySelectorAll(
   "#activities input[type=checkbox]"
 );
-let totalCost = document.getElementById("activities-cost");
+let totalCost = document.querySelector("activities-cost");
 
 /* ==================================
     FOCUS ON NAME INPUT ON PAGE LOAD
@@ -93,10 +93,11 @@ activities.addEventListener("change", (e) => {
       }
     }
   }
+
   activity.checked
     ? (totalCost += activity_cost)
     : (totalCost -= activity_cost);
 
-  totalCost.textContent = `Total: $${totalCost}`;
-  console.log(`Total: $${totalCost}`);
+  // totalCost.textContent = `Total: $${+totalCost}`;
+  console.log(totalCost);
 });
