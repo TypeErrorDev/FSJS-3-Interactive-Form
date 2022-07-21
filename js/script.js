@@ -96,3 +96,17 @@ activities.addEventListener("change", (e) => {
 /* ==================================
         PAYMENT INFO SECTION
 ===================================== */
+const paypalSelection = document.getElementById("paypal");
+const bitcoinSelection = document.getElementById("bitcoin");
+const paymentSelection = document.getElementById("payment");
+const creditCard = paymentSelection[1];
+
+function paymentDefaults() {
+  if ((creditCard.selected = true)) {
+    paypalSelection.classList.add("hidden");
+    bitcoinSelection.classList.add("hidden");
+  } else {
+    paypalSelection.classList.remove("hidden");
+  }
+}
+paymentDefaults();
