@@ -11,11 +11,10 @@ const designSelect = document.querySelector("#design");
 const colorSelect = document.querySelector("#color");
 const colorOption = colorSelect.children;
 // Activities
-const activities = document.querySelector("#activities");
-const checkboxes = document.querySelectorAll(
-  "#activities input[type=checkbox]"
-);
-let totalCost = document.querySelector("activities-cost");
+const activities = document.getElementById("activities");
+const checkboxes = activities.querySelectorAll("input[type=checkbox]");
+let finalCost = document.querySelector("#activities-cost");
+let totalCost = 0;
 
 /* ==================================
     FOCUS ON NAME INPUT ON PAGE LOAD
@@ -66,16 +65,9 @@ tshirtColorSelections();
     ACTIVITIES TOTAL COST UPDATE
 ===================================== */
 
-// declare variables of the event data-day-and-time attribute
-const dateInputs = document.querySelector(`[type="checkbox"]`);
-// const dateAndTime = dateInputs.getAttribute("data-date-and-time");
-
-// declare variables of the event data-cost attribute
-const cbDataCosts = dateInputs.getAttribute("data-cost");
-
 activities.addEventListener("change", (e) => {
   let activity = e.target;
-  let activity_cost = +activity.dataset.cost;
+  let activity_cost = parseInt(activity.getAttribute("data-cost"));
   let activity_date = activity.dataset.dayAndTime;
 
   for (let i = 0; i < checkboxes.length; i++) {
@@ -98,5 +90,9 @@ activities.addEventListener("change", (e) => {
     ? (totalCost += activity_cost)
     : (totalCost -= activity_cost);
 
-  totalCost.textContent(`Total: $${totalCost}`);
+  finalCost.innerHTML = `Total: $ ${totalCost}`;
 });
+
+/* ==================================
+        PAYMENT INFO SECTION
+===================================== */
