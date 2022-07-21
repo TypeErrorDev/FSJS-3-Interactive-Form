@@ -1,0 +1,52 @@
+"Name" Field
+    Meets Expectations:
+        ✔ On page load, the cursor appears in the "Name" field, ready for a user to type @done(22-07-12 19:30)
+
+"Job Role" section
+    Meets Expectations:
+        ✔ "Other job role" text field displays/hides when a user selects/deselects "Other" from the Job Role menu @done(22-07-12 19:30)
+
+"T-Shirt" Section
+    Meets Expectations:
+        ✔ The "Color" field is disabled when the page loads @started(22-07-12 19:31) @done(22-07-12 21:51) @lasted(2h20m43s)
+        ✔ The "Color" field is enabled when a "Theme" is selected @started(22-07-12 19:31) @done(22-07-12 21:51) @lasted(2h20m46s)
+        ✔ The "Color" field updates correctly when a T-Shirt theme is selected or changed @started(22-07-12 19:31) @done(22-07-12 22:04) @lasted(2h33m47s)
+        ✔ The "Color" drop down menu updates correctly when a T-Shirt theme is selected or changed @started(22-07-12 19:31) @done(22-07-12 22:04) @lasted(2h33m47s)
+
+"Register for Activities" Section
+    Meets Expectations:
+        ✔ The total cost of selected activities correctly updates in the form when users select of deselect activities @started(22-07-12 19:31) @done(22-07-21 15:19) @lasted(1w1d19h48m5s)
+
+    Exceeds Expectations:
+        ✔ The user is prevented from selecting two activities that are at the same day and time @started(22-07-12 19:31) @done(22-07-18 09:01) @lasted(5d13h30m18s)
+
+"Payment Info" Section
+    Meets Expectations:
+        ☐ When the page loads, "Credit Card" is selected in the payment field, and the credit card section is the only payment section displayed in the form's UI @started(22-07-12 19:31)
+        ☐ The payment section updates correctly when the user changes the selected payment method in the drop down menu @started(22-07-12 19:31)
+
+"Form Validation
+    Meets Expectations:
+        ☐ Form submission uses the `submit` event on the `form` element @started(22-07-12 19:31)
+        ☐ Form cannot be submitted (the page does not refresh when the submit button is clicked) until the folowing is met @started(22-07-12 19:31)
+            ☐ "Name" field isn't blank @started(22-07-12 19:31)
+            ☐ "Email" filed contains a correctly formatted email address @started(22-07-12 19:31)
+            ☐ At least one activity has been selected @started(22-07-12 19:31)
+            ☐ If "credit Card" is the selected payment option, the three credit card fields accept only numbers: a 13-16 digit credit card number, a 5 digit zip code and a 3 digit CVV value @started(22-07-12 19:31)
+        ☐ When all the required fileds are filled out correctly, the form submits (the page refreshes on its own when the submit button is clicked) @started(22-07-12 19:31)
+
+    Exceeds Expectations:
+        ☐ At least one required field validates user input in real time as the user interacts with the field @started(22-07-12 19:31)
+        ☐ At least one required form field provides validation error messages that differ depending on the reason the field is invalid @started(22-07-12 19:31)
+        ☐ Form fields that have real time validation and conditional error messages are detailed in the project's `README.md` file @started(22-07-12 19:31)
+
+Accessibility
+    Meets Expectations:
+        ✔ The activities have obvious `focus` state indicators when tabbing through the form's input @started(22-07-12 19:31) @done(22-07-14 07:46) @lasted(1d12h15m9s)
+        ☐ IF a required field's input is `not valid` when the form is submitted, a validation error message, warning icon and color are displayed @started(22-07-12 19:31)
+        ☐ If a required field's input is `valid` when the form is submitted, a checkmark icon is displayed and no error indicators are displayed @started(22-07-12 19:31)
+    
+Code Quality
+    Meets Expectations:
+        ☐ Code comments have been added to the js/script.js file @started(22-07-12 19:31)
+        ☐ No unresolved errors appear in the console when the form loads or is interacted with @started(22-07-12 19:31)
