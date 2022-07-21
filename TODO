@@ -22,12 +22,12 @@
 
 "Payment Info" Section
     Meets Expectations:
-        ☐ When the page loads, "Credit Card" is selected in the payment field, and the credit card section is the only payment section displayed in the form's UI @started(22-07-12 19:31)
-        ☐ The payment section updates correctly when the user changes the selected payment method in the drop down menu @started(22-07-12 19:31)
+        ✔ When the page loads, "Credit Card" is selected in the payment field, and the credit card section is the only payment section displayed in the form's UI @started(22-07-12 19:31) @done(22-07-21 17:46) @lasted(1w1d22h15m21s)
+        ✔ The payment section updates correctly when the user changes the selected payment method in the drop down menu @started(22-07-12 19:31) @done(22-07-21 17:50) @lasted(1w1d22h19m32s)
 
 "Form Validation
     Meets Expectations:
-        ☐ Form submission uses the `submit` event on the `form` element @started(22-07-12 19:31)
+        ✔ Form submission uses the `submit` event on the `form` element @started(22-07-12 19:31) @done(22-07-21 18:14) @lasted(1w1d22h44m)
         ☐ Form cannot be submitted (the page does not refresh when the submit button is clicked) until the folowing is met @started(22-07-12 19:31)
             ☐ "Name" field isn't blank @started(22-07-12 19:31)
             ☐ "Email" filed contains a correctly formatted email address @started(22-07-12 19:31)
