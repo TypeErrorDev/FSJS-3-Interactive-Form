@@ -5,7 +5,6 @@ In this project, I used JavaScript to enhance and validate an interactive regist
 ## Table of contents
 
 - [Overview](#overview)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
