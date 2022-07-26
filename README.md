@@ -29,6 +29,7 @@ Visitors should be able to:
 ### Links
 
 - Live Site URL: [FSJS Interactive Form With RegEx Validation](https://fsjs-interactive-form.netlify.app/)
+  - Please do not use safari while viewing this project's live link
 
 ## My process
 
