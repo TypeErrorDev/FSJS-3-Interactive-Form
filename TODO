@@ -28,11 +28,11 @@
 "Form Validation
     Meets Expectations:
         ✔ Form submission uses the `submit` event on the `form` element @started(22-07-12 19:31) @done(22-07-21 18:14) @lasted(1w1d22h44m)
-        ☐ Form cannot be submitted (the page does not refresh when the submit button is clicked) until the folowing is met @started(22-07-12 19:31)
-            ☐ "Name" field isn't blank @started(22-07-12 19:31)
-            ☐ "Email" filed contains a correctly formatted email address @started(22-07-12 19:31)
-            ☐ At least one activity has been selected @started(22-07-12 19:31)
-            ☐ If "credit Card" is the selected payment option, the three credit card fields accept only numbers: a 13-16 digit credit card number, a 5 digit zip code and a 3 digit CVV value @started(22-07-12 19:31)
+        ✔ Form cannot be submitted (the page does not refresh when the submit button is clicked) until the folowing is met @started(22-07-12 19:31) @done(22-07-27 00:14) @lasted(2w4h43m44s)
+            ✔ "Name" field isn't blank @started(22-07-12 19:31) @done(22-07-27 00:14) @lasted(2w4h43m44s)
+            ✔ "Email" filed contains a correctly formatted email address @started(22-07-12 19:31) @done(22-07-27 00:14) @lasted(2w4h43m44s)
+            ✔ At least one activity has been selected @started(22-07-12 19:31) @done(22-07-27 00:14) @lasted(2w4h43m44s)
+            ✔ If "credit Card" is the selected payment option, the three credit card fields accept only numbers: a 13-16 digit credit card number, a 5 digit zip code and a 3 digit CVV value @started(22-07-12 19:31) @done(22-07-27 00:14) @lasted(2w4h43m44s)
         ☐ When all the required fileds are filled out correctly, the form submits (the page refreshes on its own when the submit button is clicked) @started(22-07-12 19:31)
 
     Exceeds Expectations:
@@ -43,8 +43,8 @@
 Accessibility
     Meets Expectations:
         ✔ The activities have obvious `focus` state indicators when tabbing through the form's input @started(22-07-12 19:31) @done(22-07-14 07:46) @lasted(1d12h15m9s)
-        ☐ IF a required field's input is `not valid` when the form is submitted, a validation error message, warning icon and color are displayed @started(22-07-12 19:31)
-        ☐ If a required field's input is `valid` when the form is submitted, a checkmark icon is displayed and no error indicators are displayed @started(22-07-12 19:31)
+        ✔ IF a required field's input is `not valid` when the form is submitted, a validation error message, warning icon and color are displayed @started(22-07-12 19:31) @done(22-07-27 00:35) @lasted(2w5h4m13s)
+        ✔ If a required field's input is `valid` when the form is submitted, a checkmark icon is displayed and no error indicators are displayed @started(22-07-12 19:31) @done(22-07-27 00:35) @lasted(2w5h4m33s)
     
 Code Quality
     Meets Expectations:

@@ -11,8 +11,10 @@ const designSelect = document.querySelector("#design");
 const colorSelect = document.querySelector("#color");
 const colorOption = colorSelect.children;
 // Activities
-const activities = document.getElementById("activities-box");
-const checkboxes = activities.querySelectorAll("input[type=checkbox]");
+const allActivities = document.getElementById("activities");
+const activityInput = document.querySelectorAll("#activities input");
+const activitiesBox = document.getElementById("activities-box");
+const checkboxes = activitiesBox.querySelectorAll("input[type=checkbox]");
 let finalCost = document.querySelector("#activities-cost");
 let totalCost = 0;
 // Payment
@@ -21,12 +23,12 @@ const bitcoinSelection = document.getElementById("bitcoin");
 const paymentSelection = document.getElementById("payment");
 const creditCard = paymentSelection[1];
 // Form Validation
-const nameRegex = /[^a-zA-Z\ ]+/g;
-const emailRegex = /^[^\@]+@[^\@]+\.[^\@]+$/;
-const formValidation = document.querySelector("form");
+const formRegistration = document.querySelector(".container");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const emailHint = document.getElementById("email-hint");
+const nameRegex = /^[a-zA-Z]+\s?[a-zA-Z]+$/;
+const emailRegex = /^[^@]+@[^@.]+\.[a-z]+$/i;
 // CC Validation
 const ccInput = document.getElementById("cc-num");
 const zipInput = document.getElementById("zip");
@@ -80,7 +82,7 @@ tshirtColorSelections();
 /* ==================================
     ACTIVITIES TOTAL COST UPDATE
 ===================================== */
-activities.addEventListener("change", (e) => {
+activitiesBox.addEventListener("change", (e) => {
   let activity = e.target;
   let activity_cost = parseInt(activity.getAttribute("data-cost"));
   let activity_date = activity.dataset.dayAndTime;
@@ -108,6 +110,33 @@ activities.addEventListener("change", (e) => {
   finalCost.innerHTML = `Total: $${totalCost}`;
 });
 
+function validateActivity() {
+  let count = 0;
+  for (let i = 0; i < activityInput.length; i++) {
+    if (activityInput[i].checked == true) {
+      count += 1;
+    }
+  }
+  if (count !== 0) {
+    allActivities.firstElementChild.className = "valid";
+    allActivities.lastElementChild.style.display = "none";
+    return true;
+  } else {
+    allActivities.firstElementChild.className = "not-valid";
+    allActivities.lastElementChild.style.display = "block";
+    return false;
+  }
+}
+
+// Adding focus to activities for accessibility
+for (let i = 0; i < checkboxes.length; i++) {
+  checkboxes[i].addEventListener("focus", (e) => {
+    e.target.parentElement.classList.add("focus");
+  });
+  checkboxes[i].addEventListener("blur", (e) => {
+    e.target.parentElement.classList.remove("focus");
+  });
+}
 /* ==================================
         PAYMENT INFO SECTION
 ===================================== */
@@ -135,71 +164,131 @@ paymentSelection.addEventListener("change", (e) => {
 /* ==================================
         FORM VALIDATION SECTION
 ===================================== */
-function isNameValid() {
-  let name = nameInput.value;
-  return nameRegex.test(name);
-}
-function isEmailValid() {
-  let email = emailInput.value;
-  return emailRegex.test(email);
-}
-function isActivitiesValid() {
-  finalCost === 0 ? false : true;
-}
-function isCreditCardValid() {
-  let cc = ccInput.value;
-  return ccRegex.test(cc);
-}
-function isZipValid() {
-  let zip = zipInput.value;
-  return zipRegex.test(zip);
-}
-function isCVVValid() {
-  let cvv = cvvInput.value;
-  return cvvRegex.test(cvv);
-}
-function isNotValid(arg) {
-  arg.parentNode.classList.add("not-valid");
-  arg.parentNode.classList.remove("valid");
-  arg.parentNode.lastElementChild.style.display = "block";
-}
-function isValid(arg) {
-  arg.parentNode.classList.add("valid");
-  arg.parentNode.classList.remove("not-valid");
-  arg.parentNode.lastElementChild.style.display = "none";
-}
-formValidation.addEventListener("keyup", (e) => {
-  if (!isNameValid()) {
-    e.preventDefault();
-    isNotValid(nameInput);
+
+function validName() {
+  if (nameInput.value && nameRegex.test(nameInput.value)) {
+    nameInput.parentNode.className = "valid";
+    nameInput.parentNode.lastElementChild.style.display = "none";
+    return true;
   } else {
-    isValid(nameInput);
-  }
-});
-formValidation.addEventListener("submit", (e) => {
-  if (!isNameValid()) {
-    e.preventDefault();
-    isNotValid(nameInput);
-  } else {
-    isValid(nameInput);
-  }
-  if (!isEmailValid()) {
-    e.preventDefault();
-    let email = emailInput.value;
-    if (email === "") {
-      emailHint.textContent = `Email field is empty, please enter a valid email address.`;
-    } else if (/^\w+@\w+.\w+$/.test(email) === false) {
-      emailHint.textContent = `Your email address is missing the "@" symbol.`;
-    } else {
-      emailHint.textContent = `Email address is formatted incorrectly`;
+    if (nameInput.value) {
+      nameInput.parentNode.lastElementChild.textContent =
+        "Name cannot contain numbers or punctuation";
     }
-  } else {
-    isValid(emailInput);
+    nameInput.parentNode.className = "not-valid";
+    nameInput.parentNode.lastElementChild.style.display = "block";
+    return false;
   }
-  if (!isActivitiesValid()) {
-    e.preventDefault();
-    isNotValid(activities);
+}
+function validEmail() {
+  if (emailInput.value && emailRegex.test(emailInput.value)) {
+    emailInput.parentNode.className = "valid";
+    emailInput.parentNode.lastElementChild.style.display = "none";
+    return true;
   } else {
-    isValid(activities);
+    if (emailInput.value) {
+      emailInput.parentNode.lastElementChild.textContent =
+        "Please format your email address properly";
+    } else {
+      emailInput.parentNode.lastElementChild.textContent =
+        "Email address field cannot be blank";
+    }
+    emailInput.parentNode.className = "not-valid";
+    emailInput.parentNode.lastElementChild.style.display = "block";
+    return false;
+  }
+}
+function validCCNum() {
+  if (ccInput.value && ccRegex.test(ccInput.value)) {
+    ccInput.parentNode.className = "valid";
+    ccInput.parentNode.lastElementChild.style.display = "none";
+    return true;
+  } else {
+    if (ccInput.value) {
+      ccInput.parentNode.lastElementChild.textContent =
+        "Your credit card number must be 13-16 digits";
+    } else {
+      ccInput.parentNode.lastElementChild.textContent =
+        "Cant leave your credit card number blank, we have to get that bag";
+    }
+    ccInput.parentNode.className = "not-valid";
+    ccInput.parentNode.lastElementChild.style.display = "block";
+    return false;
+  }
+}
+function validZip() {
+  if (zipInput.value && zipRegex.test(zipInput.value)) {
+    zipInput.parentNode.className = "valid";
+    zipInput.parentNode.lastElementChild.style.display = "none";
+    return true;
+  } else {
+    if (zipInput.value) {
+      zipInput.parentNode.lastElementChild.textContent =
+        "Your zipcode is only supposed to be 5 digits";
+    } else {
+      zipInput.parentNode.lastElementChild.textContent =
+        "Your zipcode cannot be blank";
+    }
+    zipInput.parentNode.className = "not-valid";
+    zipInput.parentNode.lastElementChild.style.display = "block";
+    return false;
+  }
+}
+function validCVV() {
+  if (cvvInput.value && cvvRegex.test(cvvInput.value)) {
+    cvvInput.parentNode.className = "valid";
+    cvvInput.parentNode.lastElementChild.style.display = "none";
+    return true;
+  } else {
+    if (cvvInput.value) {
+      cvvInput.parentNode.lastElementChild.textContent =
+        "Your CVV is only supposed to be 3 digits";
+    } else {
+      cvvInput.parentNode.lastElementChild.textContent =
+        "Your CVV cannot be blank";
+    }
+    cvvInput.parentNode.className = "not-valid";
+    cvvInput.parentNode.lastElementChild.style.display = "block";
+    return false;
+  }
+}
+
+nameInput.addEventListener("keyup", () => {
+  validName();
+});
+emailInput.addEventListener("keyup", () => {
+  validEmail();
+});
+ccInput.addEventListener("keyup", () => {
+  validCCNum();
+});
+zipInput.addEventListener("keyup", () => {
+  validZip();
+});
+cvvInput.addEventListener("keyup", () => {
+  validCVV();
+});
+
+// prevent registration with any blank/invalid "required" fields
+formRegistration.addEventListener("submit", (e) => {
+  if (!validName()) {
+    e.preventDefault();
+  }
+  if (!validEmail()) {
+    e.preventDefault();
+  }
+  if (!validateActivity()) {
+    e.preventDefault();
+  }
+  if (paymentSelection.value == "credit-card") {
+    if (!validCCNum()) {
+      e.preventDefault();
+    }
+    if (!validZip()) {
+      e.preventDefault();
+    }
+    if (!validCVV()) {
+      e.preventDefault();
+    }
   }
 });
