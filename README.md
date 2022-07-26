@@ -1,6 +1,6 @@
 # Team Treehouse Full Stack JavaScript Project 3 - Interactive Form
 
-In this project, I have used JavaScript to enhance an interactive registration form for a fictional Full Stack conference.
+In this project, I used JavaScript to enhance and validate an interactive registration form for a fictional Full Stack conference.
 
 ## Table of contents
 
@@ -10,7 +10,6 @@ In this project, I have used JavaScript to enhance an interactive registration f
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
@@ -19,32 +18,18 @@ In this project, I have used JavaScript to enhance an interactive registration f
 
 ### The challenge
 
-Users should be able to:
+Visitors should be able to:
 
-- Create, Read, Update, and Delete markdown documents
-- Name and save documents to be accessed as needed
-- Edit the markdown of a document and see the formatted preview of the content
-- View a full-page preview of the formatted content
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- **Bonus**: If you're building a purely front-end project, use localStorage to save the current state in the browser that persists when the browser is refreshed
-- **Bonus**: Build this project as a full-stack application
-
-### Screenshot
-
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+- Real time visitor's full name, email addresses and credit card information via custom RegEx
+  - Name field validates if there are numbers inputted into the field, and if so, throws an error
+  - Email field validates if the email is formatted correctly, and throws errors if there's any spaces in the email address
+  - Credit Card/ZipCode/CVV field validates the digits inputted into this field, and throws an error when there is anything other a digit inputted
+- Preview the total cost based on the activities selected
+- Utilize Paypal and Bitcoin payment options to complete registration
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [FSJS Interactive Form With RegEx Validation](https://fsjs-interactive-form.netlify.app/)
 
 ## My process
 
@@ -55,37 +40,16 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- JavaScript
+- Vanilla JavaScript with RegEx validation
 
 ### What I learned
 
-While working on this project, I solidified my knowledge with using regex to validate form inputs and learned how to manipulate <option> elements. Below
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+While working on this project, I solidified my knowledge with using regex to validate form inputs and learned how to manipulate <option> elements.
 
 ### Useful resources
 
 - [Regexr](https://regexr.com/) - This site has helped me with testing my regex and ensuring that I'm validating the appropriate characters
+- [Regex101](https://regex101.com) - This site helped me with learning the different switches and how to properly format my regex to check specific test cases
 
 ## Author
 

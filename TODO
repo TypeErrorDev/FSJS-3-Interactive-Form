@@ -33,12 +33,12 @@
             ✔ "Email" filed contains a correctly formatted email address @started(22-07-12 19:31) @done(22-07-27 00:14) @lasted(2w4h43m44s)
             ✔ At least one activity has been selected @started(22-07-12 19:31) @done(22-07-27 00:14) @lasted(2w4h43m44s)
             ✔ If "credit Card" is the selected payment option, the three credit card fields accept only numbers: a 13-16 digit credit card number, a 5 digit zip code and a 3 digit CVV value @started(22-07-12 19:31) @done(22-07-27 00:14) @lasted(2w4h43m44s)
-        ☐ When all the required fileds are filled out correctly, the form submits (the page refreshes on its own when the submit button is clicked) @started(22-07-12 19:31)
+        ✔ When all the required fileds are filled out correctly, the form submits (the page refreshes on its own when the submit button is clicked) @started(22-07-12 19:31) @done(22-07-27 01:20) @lasted(2w5h49m49s)
 
     Exceeds Expectations:
-        ☐ At least one required field validates user input in real time as the user interacts with the field @started(22-07-12 19:31)
-        ☐ At least one required form field provides validation error messages that differ depending on the reason the field is invalid @started(22-07-12 19:31)
-        ☐ Form fields that have real time validation and conditional error messages are detailed in the project's `README.md` file @started(22-07-12 19:31)
+        ✔ At least one required field validates user input in real time as the user interacts with the field @started(22-07-12 19:31) @done(22-07-27 00:43) @lasted(2w5h12m49s)
+        ✔ At least one required form field provides validation error messages that differ depending on the reason the field is invalid @started(22-07-12 19:31) @done(22-07-27 00:43) @lasted(2w5h12m51s)
+        ✔ Form fields that have real time validation and conditional error messages are detailed in the project's `README.md` file @started(22-07-12 19:31) @done(22-07-27 01:27) @lasted(2w5h56m13s)
 
 Accessibility
     Meets Expectations:
@@ -48,5 +48,6 @@ Accessibility
     
 Code Quality
     Meets Expectations:
-        ☐ Code comments have been added to the js/script.js file @started(22-07-12 19:31)
-        ☐ No unresolved errors appear in the console when the form loads or is interacted with @started(22-07-12 19:31)
+        ✔ Code comments have been added to the js/script.js file @started(22-07-12 19:31) @done(22-07-27 00:44) @lasted(2w5h13m1s)
+        ✔ No unresolved errors appear in the console when the form loads or is interacted with @started(22-07-12 19:31) @done(22-07-27 00:44) @lasted(2w5h13m3s)
+Archive:

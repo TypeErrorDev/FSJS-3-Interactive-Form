@@ -1,6 +1,9 @@
 /* ==================================
               VARIABLES
 ===================================== */
+
+//All of the variables for the site, all in one place :)
+
 // nameFocus
 const nameFocus = document.querySelector("#name");
 // Job Role
@@ -103,6 +106,7 @@ activitiesBox.addEventListener("change", (e) => {
     }
   }
 
+  // this does the math for the totalCost
   activity.checked
     ? (totalCost += activity_cost)
     : (totalCost -= activity_cost);
@@ -110,6 +114,7 @@ activitiesBox.addEventListener("change", (e) => {
   finalCost.innerHTML = `Total: $${totalCost}`;
 });
 
+//this validates that an activity has been selected
 function validateActivity() {
   let count = 0;
   for (let i = 0; i < activityInput.length; i++) {
@@ -140,6 +145,7 @@ for (let i = 0; i < checkboxes.length; i++) {
 /* ==================================
         PAYMENT INFO SECTION
 ===================================== */
+//This hides the Paypal and bitcoin options if credit card is selected
 function paymentDefaults() {
   if ((creditCard.selected = true)) {
     paypalSelection.classList.add("hidden");
@@ -164,7 +170,7 @@ paymentSelection.addEventListener("change", (e) => {
 /* ==================================
         FORM VALIDATION SECTION
 ===================================== */
-
+// This validates the name against the nameRegex variable
 function validName() {
   if (nameInput.value && nameRegex.test(nameInput.value)) {
     nameInput.parentNode.className = "valid";
@@ -180,6 +186,8 @@ function validName() {
     return false;
   }
 }
+
+// This validates the name against the emailRegex variable
 function validEmail() {
   if (emailInput.value && emailRegex.test(emailInput.value)) {
     emailInput.parentNode.className = "valid";
@@ -198,6 +206,8 @@ function validEmail() {
     return false;
   }
 }
+
+// This validates the name against the ccRegex variable
 function validCCNum() {
   if (ccInput.value && ccRegex.test(ccInput.value)) {
     ccInput.parentNode.className = "valid";
@@ -216,6 +226,8 @@ function validCCNum() {
     return false;
   }
 }
+
+// This validates the name against the zipRegex variable
 function validZip() {
   if (zipInput.value && zipRegex.test(zipInput.value)) {
     zipInput.parentNode.className = "valid";
@@ -234,6 +246,8 @@ function validZip() {
     return false;
   }
 }
+
+// This validates the name against the cvvRegex variable
 function validCVV() {
   if (cvvInput.value && cvvRegex.test(cvvInput.value)) {
     cvvInput.parentNode.className = "valid";
@@ -253,6 +267,9 @@ function validCVV() {
   }
 }
 
+/* ==================================
+        FORM VALIDATION SECTION
+===================================== */
 nameInput.addEventListener("keyup", () => {
   validName();
 });
