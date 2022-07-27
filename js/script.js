@@ -24,6 +24,7 @@ let totalCost = 0;
 const paypalSelection = document.getElementById("paypal");
 const bitcoinSelection = document.getElementById("bitcoin");
 const paymentSelection = document.getElementById("payment");
+const creditCardInfo = document.getElementById("credit-card");
 const creditCard = paymentSelection[1];
 // Form Validation
 const formRegistration = document.querySelector(".container");
@@ -153,16 +154,20 @@ function paymentDefaults() {
   }
 }
 paymentDefaults();
+
 paymentSelection.addEventListener("change", (e) => {
   console.log(e.target.value);
   if (e.target.value === "credit-card") {
     paypalSelection.classList.add("hidden");
     bitcoinSelection.classList.add("hidden");
+    creditCardInfo.classList.remove("hidden");
   } else if (e.target.value === "paypal") {
     paypalSelection.classList.remove("hidden");
+    creditCardInfo.classList.add("hidden");
     bitcoinSelection.classList.add("hidden");
   } else if (e.target.value === "bitcoin") {
     paypalSelection.classList.add("hidden");
+    creditCardInfo.classList.add("hidden");
     bitcoinSelection.classList.remove("hidden");
   }
 });
