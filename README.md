@@ -55,7 +55,7 @@ While working on this project, I solidified my knowledge with using regex to val
 
 - Website - [Matthew Pantel](https://www.matthewpantel.com)
 - LinkedIn - [/MatthewPantel](https://www.LinkedIn.com/in/MatthewPantel)
-- Twitter - [@TypeErrorDev](https://www.twitter.com/TypeErrorDev)
+- Twitter - [@TypeErrorDev](https://www.twitter.com/TypeErrorDev).
 
 ## Acknowledgments
 
